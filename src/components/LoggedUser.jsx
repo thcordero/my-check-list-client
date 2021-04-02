@@ -13,7 +13,7 @@ function LoggedUser() {
 
     function listedItems() {
 
-        axios.get("https://git.heroku.com/my-check-list-server.git/mylist").then(res => {
+        axios.get("https://my-check-list-server.herokuapp.com/mylist").then(res => {
 
             res.data.forEach(item => {
                 setItems(prevItems => {
@@ -34,7 +34,7 @@ function LoggedUser() {
     }
 
     function addItem() {
-        axios.post("https://git.heroku.com/my-check-list-server.git/mylist", { content: inputText }).then(res => {
+        axios.post("https://my-check-list-server.herokuapp.com/mylist", { content: inputText }).then(res => {
 
             setItems(prevItems => {
 
@@ -53,7 +53,7 @@ function LoggedUser() {
 
         console.log(idDeletedItem);
 
-        axios.delete("http://localhost:5000/mylist", { data: { idDeletedItem } }).then(() => {
+        axios.delete("https://my-check-list-server.herokuapp.com/mylist", { data: { idDeletedItem } }).then(() => {
             setItems(prevItems => {
                 return prevItems.filter((item, index) => {
                     return index !== id;
