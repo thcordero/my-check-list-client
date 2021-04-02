@@ -7,7 +7,7 @@ const Auth = {
     authUser:"",
 
     async register(inputUsername, inputPassword) {
-      await  axios.post("http://localhost:5000/register", {
+      await  axios.post("https://git.heroku.com/my-check-list-server.git/register", {
             username: inputUsername,
             password: inputPassword
         }, { withCredentials: true }).then(res => {
@@ -23,7 +23,7 @@ const Auth = {
 
     async authenticate(inputUsername, inputPassword) {
 
-        await axios.post("http://localhost:5000/login", {
+        await axios.post("https://git.heroku.com/my-check-list-server.git/login", {
             username: inputUsername,
             password: inputPassword
         }, { withCredentials: true }).then(res => {
@@ -39,7 +39,7 @@ const Auth = {
 
     async logout() {
 
-        await axios.get("http://localhost:5000/logout", { withCredentials: true })
+        await axios.get("https://git.heroku.com/my-check-list-server.git/logout", { withCredentials: true })
             .then(res => {
                 console.log(res.data);
                 this.isAuthenticated = res.data.isAuth;
@@ -52,7 +52,7 @@ const Auth = {
     },
 
     async getAuth() {
-        await axios.get("http://localhost:5000/secrets", { withCredentials: true })
+        await axios.get("https://git.heroku.com/my-check-list-server.git/secrets", { withCredentials: true })
             .then(res => {
                 console.log(res.data);
                 this.isAuthenticated = res.data.isAuth;
@@ -63,7 +63,7 @@ const Auth = {
 
     },
     async getAuthUser() {
-        await axios.get("http://localhost:5000/secrets", { withCredentials: true })
+        await axios.get("https://git.heroku.com/my-check-list-server.git/secrets", { withCredentials: true })
             .then(res => {
                 console.log(res.data);
                 this.isAuthenticated = res.data.isAuth;

@@ -13,7 +13,7 @@ function LoggedUser() {
 
     function listedItems() {
 
-        axios.get("http://localhost:5000/mylist").then(res => {
+        axios.get("https://git.heroku.com/my-check-list-server.git/mylist").then(res => {
 
             res.data.forEach(item => {
                 setItems(prevItems => {
@@ -34,7 +34,7 @@ function LoggedUser() {
     }
 
     function addItem() {
-        axios.post("http://localhost:5000/mylist", { content: inputText }).then(res => {
+        axios.post("https://git.heroku.com/my-check-list-server.git/mylist", { content: inputText }).then(res => {
 
             setItems(prevItems => {
 
