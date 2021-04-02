@@ -20,16 +20,16 @@ function App() {
       <Router>
         <Switch>
 
-          <Route exact path="https://wonderful-brown-78efce.netlify.app/" component={Home}>
+          <Route exact path="/" component={Home}>
 
             <Home />
 
           </Route>
 
-          <ProtectedRoute path="https://wonderful-brown-78efce.netlify.app/secrets" component={Secrets} />
+          <ProtectedRoute path="/secrets" component={Secrets} />
 
 
-          <Route path="https://wonderful-brown-78efce.netlify.app/register" component={Register}>
+          <Route path="/register" component={Register}>
 
             <Register />
 

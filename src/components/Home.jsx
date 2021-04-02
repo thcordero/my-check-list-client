@@ -42,7 +42,8 @@ function Home() {
 
     return (
         <div>
-            {isAuth && <Redirect to="https://wonderful-brown-78efce.netlify.app/secrets" />}
+        
+            {isAuth && <Redirect to="/secrets" />}
 
 
             <div className="loginUsername">

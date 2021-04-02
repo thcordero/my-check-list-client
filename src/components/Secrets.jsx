@@ -22,7 +22,7 @@ function Secrets() {
         <div>
             <LoggedUser />
             <button onClick={handleClick}> Logout </button>
-            {!isLogout && <Redirect to="https://wonderful-brown-78efce.netlify.app/" />}
+            {!isLogout && <Redirect to="/" />}
         
         </div>
     );
