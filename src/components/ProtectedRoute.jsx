@@ -12,7 +12,7 @@ import Auth from "./Auth";
     
 
     return <Route {...rest} render={props => Auth.isAuthenticated ? (<Component {...props}/>) :
-        <Redirect to="/" />} />
+        <Redirect to="https://wonderful-brown-78efce.netlify.app/" />} />
 
 }
 

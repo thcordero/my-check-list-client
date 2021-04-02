@@ -46,7 +46,7 @@ function Register() {
     return (
         <div>
 
-            {isAuth && <Redirect to="/secrets" />}
+            {isAuth && <Redirect to="https://wonderful-brown-78efce.netlify.app/secrets" />}
 
             <div className="registerUsername">
                 <input
