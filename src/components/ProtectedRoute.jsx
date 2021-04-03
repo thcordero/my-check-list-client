@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Route,
     Redirect
@@ -9,12 +9,13 @@ import Auth from "./Auth";
 
 
 function ProtectedRoute({ component: Component, ...rest }) {
+    const [isAuth, setIsAuth]=useState(false);
     
+    if (isAuth === false) {
+        Auth.getAuth().then(result => { setIsAuth(result) });
+    }
     
-    console.log(Auth.getAuth());
-    console.log(Auth.getAuthUser());
-
-    return <Route {...rest} render={props => Auth.isAuthenticated ? (<Component {...props} />) :
+    return <Route {...rest} render={props => isAuth ? (<Component {...props} />) :
         <Redirect to="/" />} />
 
 }
