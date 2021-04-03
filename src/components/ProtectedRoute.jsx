@@ -10,6 +10,7 @@ import Auth from "./Auth";
 
 function ProtectedRoute({ component: Component, ...rest }) {
     
+    console.log(Auth.isAuthenticated)
 
     return <Route {...rest} render={props => Auth.isAuthenticated ? (<Component {...props} />) :
         <Redirect to="/" />} />
