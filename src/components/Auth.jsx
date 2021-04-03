@@ -15,6 +15,7 @@ const Auth = {
             console.log(res.data);
             this.isAuthenticated = res.data.isAuth;
             this.authUser = res.data.user;
+            console.log("register");
 
         });
 
@@ -31,6 +32,7 @@ const Auth = {
             console.log(res.data);
             this.isAuthenticated = res.data.isAuth;
             this.authUser = res.data.user;
+            console.log("authenticate");
         });
 
         return Promise.resolve(this.isAuthenticated);
@@ -44,6 +46,7 @@ const Auth = {
                 console.log(res.data);
                 this.isAuthenticated = res.data.isAuth;
                 this.authUser="";
+                console.log("logout");
 
             });
 
@@ -57,6 +60,7 @@ const Auth = {
                 console.log(res.data);
                 this.isAuthenticated = res.data.isAuth;
                 this.authUser = res.data.user;
+                console.log("getAuth");
             });
 
         return Promise.resolve(this.isAuthenticated);
@@ -68,6 +72,7 @@ const Auth = {
                 console.log(res.data);
                 this.isAuthenticated = res.data.isAuth;
                 this.authUser = res.data.user;
+                console.log("getAuthUser");
             });
 
         return Promise.resolve(this.authUser);
