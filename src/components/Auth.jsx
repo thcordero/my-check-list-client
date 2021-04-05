@@ -8,7 +8,7 @@ const Auth = {
     sessionID: "",
 
     async register(inputUsername, inputPassword) {
-        await axios.post("https://my-check-list-server.herokuapp.com/register", {
+        await axios.post("http://localhost:5000/register" /*"https://my-check-list-server.herokuapp.com/register"*/, {
             username: inputUsername,
             password: inputPassword
         }, { withCredentials: true }).then(res => {
@@ -25,7 +25,7 @@ const Auth = {
 
     async authenticate(inputUsername, inputPassword) {
 
-        await axios.post("https://my-check-list-server.herokuapp.com/login", {
+        await axios.post("http://localhost:5000/login" /*"https://my-check-list-server.herokuapp.com/login"*/, {
             username: inputUsername,
             password: inputPassword
         }, { withCredentials: true }).then(res => {
@@ -44,7 +44,7 @@ const Auth = {
 
     async logout() {
 
-        await axios.get("https://my-check-list-server.herokuapp.com/logout", { withCredentials: true })
+        await axios.get("http://localhost:5000/logout" /*"https://my-check-list-server.herokuapp.com/logout"*/, { withCredentials: true })
             .then(res => {
                 console.log(res.data);
                 this.isAuthenticated = res.data.isAuth;
@@ -58,7 +58,7 @@ const Auth = {
     },
 
     async getAuth() {
-        await axios.post("https://my-check-list-server.herokuapp.com/secrets", {
+        await axios.post("http://localhost:5000/secrets" /*"https://my-check-list-server.herokuapp.com/secrets"*/, {
             loggedID: this.sessionID
         }, { withCredentials: true }).then(res => {
             console.log(res.data);
@@ -72,7 +72,7 @@ const Auth = {
 
     },
     async getAuthUser() {
-        await axios.get("https://my-check-list-server.herokuapp.com/secrets", { withCredentials: true })
+        await axios.get("http://localhost:5000/secrets" /*"https://my-check-list-server.herokuapp.com/secrets"*/, { withCredentials: true })
             .then(res => {
                 console.log(res.data);
                 this.isAuthenticated = res.data.isAuth;

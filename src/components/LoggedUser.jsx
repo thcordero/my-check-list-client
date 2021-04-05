@@ -34,7 +34,7 @@ function LoggedUser() {
     }
 
     function addItem() {
-        axios.post("https://my-check-list-server.herokuapp.com/mylist", { content: inputText }).then(res => {
+        axios.post("http://localhost:5000/mylist" /*"https://my-check-list-server.herokuapp.com/mylist"*/, { content: inputText }).then(res => {
 
             setItems(prevItems => {
 
@@ -53,7 +53,7 @@ function LoggedUser() {
 
         console.log(idDeletedItem);
 
-        axios.delete("https://my-check-list-server.herokuapp.com/mylist", { data: { idDeletedItem } }).then(() => {
+        axios.delete("http://localhost:5000/mylist" /*"https://my-check-list-server.herokuapp.com/mylist"*/, { data: { idDeletedItem } }).then(() => {
             setItems(prevItems => {
                 return prevItems.filter((item, index) => {
                     return index !== id;
