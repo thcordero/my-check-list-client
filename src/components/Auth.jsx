@@ -58,12 +58,15 @@ const Auth = {
     },
 
     async getAuth() {
-        await axios.get("https://my-check-list-server.herokuapp.com/secrets", { withCredentials: true })
+        await axios.post("https://my-check-list-server.herokuapp.com/secrets", {
+            loggedID: this.sessionID
+        }, { withCredentials: true })
             .then(res => {
                 console.log(res.data);
                 this.isAuthenticated = res.data.isAuth;
                 this.authUser = res.data.user;
                 console.log("getAuth");
+                console.log(res.data.sessionID);
             });
 
         return Promise.resolve(this.isAuthenticated);
