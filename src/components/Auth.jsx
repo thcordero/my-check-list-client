@@ -4,7 +4,8 @@ import axios from "axios";
 const Auth = {
 
     isAuthenticated: false,
-    authUser:"",
+    authUser:{},
+    sessionID:"",
 
     async register(inputUsername, inputPassword) {
       await  axios.post("https://my-check-list-server.herokuapp.com/register", {
@@ -32,7 +33,9 @@ const Auth = {
             console.log(res.data);
             this.isAuthenticated = res.data.isAuth;
             this.authUser = res.data.user;
+            this.sessionID = res.data.sessionID;
             console.log("authenticate");
+            console.log(this.sessionID);
         });
 
         return Promise.resolve(this.isAuthenticated);
